@@ -1,1 +1,2 @@
-tests/data/* linguist-vendored
+* linguist-vendored
+*.php linguist-vendored=false
