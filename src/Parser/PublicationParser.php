@@ -10,10 +10,9 @@ use DOMElement;
 use Symfony\Component\DomCrawler\Crawler;
 
 /**
- * Parses a scholar's profile page from Google Scholar and returns publications into memory.
- *
+ * Parses a scholar's profile page from Google Scholar and returns its publications.
  */
-class PublicationParser
+class PublicationParser extends BaseParser implements Parser
 {
 
     const GSCHOLAR_XPATH_PUBLICATIONS = '//table[@id="gsc_a_t"]/tbody[@id="gsc_a_b"]/tr[@class="gsc_a_tr"]';
@@ -24,19 +23,8 @@ class PublicationParser
     const GSCHOLAR_CSS_CLASS_YEAR = 'gsc_a_y';
     const GSCHOLAR_CSS_CLASS_GRAY = 'gs_gray';
 
-    /** @var Crawler crawler */
-    private $crawler;
-
     /**
-     * @param Crawler $crawler
-     */
-    public function __construct(Crawler $crawler)
-    {
-        $this->crawler = $crawler;
-    }
-
-    /**
-     * @return array[int][]
+     * @inheritdoc
      */
     public function parse()
     {
