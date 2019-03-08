@@ -43,4 +43,60 @@ class Publication
         $this->citationsURL = isset($properties['citationsURL']) ? $properties['citationsURL'] : null;
         $this->year = (int) $properties['year'];
     }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGScholarPath()
+    {
+        return $this->gScholarPath;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthors()
+    {
+        return $this->authors;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPublisherDetails()
+    {
+        return $this->publisherDetails;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getNbCitations()
+    {
+        return $this->nbCitations;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getCitationsURL()
+    {
+        return $this->citationsURL;
+    }
+
+    /**
+     * @return int
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
 }
