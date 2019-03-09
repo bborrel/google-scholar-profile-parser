@@ -1,10 +1,16 @@
 # Google Scholar Profile Parser
 
-Google Scholar Profile Parser is a PHP library which parses a profile page from Google Scholar website into an array.
+Google Scholar Profile Parser is a PHP library which parses the HTML of a scholar's profile page from Google Scholar 
+website and transforms its data into a regular PHP data structure.
+
+The parsed data from a scholar is:
+
+- his/her list of publications (title, link, authors, publisher details, citations)
+- his/her citations' statistics (number of citations, h-index, i10-index)
 
 ## Table of content
 
-- [Genesis](#genesis)
+- [Project Rationale](#project-rationale)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -12,23 +18,31 @@ Google Scholar Profile Parser is a PHP library which parses a profile page from 
 - [Author](#author)
 - [License](#license)
 
-## Genesis
+## Project rationale
 
-While I was looking for a PHP library which parses a profile page from Google Scholar website, I only found 
-[Scholar parser][1] from [Daniel Schreij][2]. But I was unhappy with this library's dependency upon [PhantomJS][3] 
+As explained by this [Wikipedia page][1]:
+
+> Google Scholar is a freely accessible web search engine that indexes the full text or metadata of scholarly literature
+> across an array of publishing formats and disciplines.Google Scholar is a website which indexes scholars' publications
+> and citations.
+
+Unfortunately [Google Scholar][2] website doesn't provide an API and I needed a way to fetch a scholar's data.
+
+So, while I was looking for a PHP library which parses a profile page from Google Scholar website, I only found 
+[Scholar parser][3] from [Daniel Schreij][4]. But I was unhappy with this library's dependency upon [PhantomJS][5] 
 which development is suspended (and will likely not resume, leaving users without support). So I decided to rewrite this
 library redesigning it to depend only on PHP, and no more Javascript.
 
 ## Requirements
 
-As stated in [composer.json][4], it requires:
+As stated in [composer.json][6], it requires:
 
 - PHP 5.6+
 - PHP DOM extension
 
 ## Installation
 
-Use [Composer][5] to download and install it as well as its dependencies.
+Use [Composer][7] to download and install it as well as its dependencies.
 
 ```bash
 composer require bborrel/google-scholar-profile-parser
@@ -36,48 +50,32 @@ composer require bborrel/google-scholar-profile-parser
 
 ## Usage
 
-```php
-require __DIR__ . '/vendor/autoload.php';
-
-use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
-use GScholarProfileParser\Parser\PublicationParser;
-use GScholarProfileParser\Entity\Publication;
-use Goutte\Client;
-
-/** @var Client $client */
-$client = new Client();
-
-/** @var ProfilePageCrawler $crawler */
-$crawler = new ProfilePageCrawler($client, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
-
-/** @var PublicationParser $parser */
-$parser = new PublicationParser($crawler->getCrawler());
-
-$publications = $parser->parse();
-foreach ($publications as &$publication) {
-    $publication = new Publication($publication);
-}
-unset($publication);
-
-```
+See the examples in the [project's documentation][8].
 
 ## Versioning
 
-I use [SemVer][6] for versioning. For the versions available, see the [tags on this repository][7]. 
+This project use [SemVer][9] for versioning. For available versions, see the [tags on this repository][10]. For feature
+changes, see the [CHANGELOG.md][11] file for details.
+ 
 
 ## Author
 
-[Benoit Borrel][8]
+[Benoit Borrel][12]
 
 # License
 
-This project is licensed under the GPL-3.0-only License - see the [LICENSE.md][9] file for details.
+This project is licensed under the GPL-3.0-only License, see the [LICENSE.md][13] file for details.
 
-[1]: https://github.com/dschreij/scholar_parser
-[2]: https://github.com/dschreij
-[3]: http://phantomjs.org/
-[5]: https://getcomposer.org/
-[6]: http://semver.org/
-[7]: https://github.com/bborrel/google-scholar-profile-parser/tags
-[8]: https://github.com/bborrel
-[9]: LICENSE.md
+[1]: https://en.wikipedia.org/wiki/Google_Scholar
+[2]: https://scholar.google.com/
+[3]: https://github.com/dschreij/scholar_parser
+[4]: https://github.com/dschreij
+[5]: http://phantomjs.org/
+[6]: composer.json
+[7]: https://getcomposer.org/
+[8]: doc
+[9]: http://semver.org/
+[10]: https://github.com/bborrel/google-scholar-profile-parser/tags
+[11]: CHANGELOG.md
+[12]: https://github.com/bborrel
+[13]: LICENSE.md

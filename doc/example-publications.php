@@ -11,13 +11,22 @@ use Goutte\Client;
 $client = new Client();
 
 /** @var ProfilePageCrawler $crawler */
-$crawler = new ProfilePageCrawler($client, '8daWuo4AAAAJ');
+$crawler = new ProfilePageCrawler($client, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
 
 /** @var PublicationParser $parser */
 $parser = new PublicationParser($crawler->getCrawler());
 
 $publications = $parser->parse();
 foreach ($publications as &$publication) {
+    /** @var Publication $publication */
     $publication = new Publication($publication);
 }
 unset($publication);
+
+echo $publications[0]->getTitle(), "\n";
+echo $publications[0]->getPublicationURL(), "\n";
+echo $publications[0]->getAuthors(), "\n";
+echo $publications[0]->getPublisherDetails(), "\n";
+echo $publications[0]->getNbCitations(), "\n";
+echo $publications[0]->getCitationsURL(), "\n";
+echo $publications[0]->getYear(), "\n";
