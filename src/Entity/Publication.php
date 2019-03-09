@@ -6,6 +6,8 @@
 
 namespace GScholarProfileParser\Entity;
 
+use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
+
 class Publication
 {
 
@@ -13,7 +15,7 @@ class Publication
     private $title;
 
     /** @var string Relative path on Google Scholar to publication's detail web page */
-    private $gScholarPath;
+    private $publicationPath;
 
     /** @var string List of authors, comma separated */
     private $authors;
@@ -36,12 +38,12 @@ class Publication
     public function __construct(array $properties)
     {
         $this->title = $properties['title'];
-        $this->gScholarPath = $properties['gScholarPath'];
+        $this->publicationPath = $properties['publicationPath'];
         $this->authors = $properties['authors'];
         $this->publisherDetails = $properties['publisherDetails'];
-        $this->nbCitations = isset($properties['nbCitations']) ? (int) $properties['nbCitations'] : null ;
+        $this->nbCitations = isset($properties['nbCitations']) ? (int)$properties['nbCitations'] : null;
         $this->citationsURL = isset($properties['citationsURL']) ? $properties['citationsURL'] : null;
-        $this->year = (int) $properties['year'];
+        $this->year = (int)$properties['year'];
     }
 
     /**
@@ -55,9 +57,14 @@ class Publication
     /**
      * @return string
      */
-    public function getGScholarPath()
+    public function getPublicationPath()
     {
-        return $this->gScholarPath;
+        return $this->publicationPath;
+    }
+
+    public function getPublicationURL()
+    {
+        return ProfilePageCrawler::getSchemeAndHostname() . $this->getPublicationPath();
     }
 
     /**

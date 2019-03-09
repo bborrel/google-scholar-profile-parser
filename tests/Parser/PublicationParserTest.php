@@ -18,9 +18,8 @@ class PublicationParserTest extends TestCase
     /** @var resource $htmlFile The file handler to the fixture file */
     private $htmlFile;
 
-    /** @var array actual parsed publications */
+    /** @var array Actual parsed publications */
     private $parsedPublications;
-
 
     protected function setUp(): void
     {
@@ -30,18 +29,18 @@ class PublicationParserTest extends TestCase
         $this->parsedPublications = [
             [
                 'title' => 'Interaction of oxygen functionalized multi-walled carbon nanotube nanofluids with copper',
-                'gScholarPath' => '/citations?view_op=view_citation&hl=fr&user=8daWuo4AAAAJ&pagesize=2&sortby=pubdate&citation_for_view=8daWuo4AAAAJ:NhqRSupF_l8C',
+                'publicationPath' => '/citations?view_op=view_citation&hl=en&user=8daWuo4AAAAJ&pagesize=2&sortby=pubdate&citation_for_view=8daWuo4AAAAJ:NhqRSupF_l8C',
                 'authors' => 'A Karthikeyan, S Coulombe, AM Kietzig, RS Stein, T van de Ven',
                 'publisherDetails' => 'Carbon 140, 201-209',
                 'year' => '2018',
             ],
             [
                 'title' => 'Boiling heat transfer enhancement with stable nanofluids and laser textured copper surfaces',
-                'gScholarPath' => '/citations?view_op=view_citation&hl=fr&user=8daWuo4AAAAJ&pagesize=2&sortby=pubdate&citation_for_view=8daWuo4AAAAJ:bFI3QPDXJZMC',
+                'publicationPath' => '/citations?view_op=view_citation&hl=en&user=8daWuo4AAAAJ&pagesize=2&sortby=pubdate&citation_for_view=8daWuo4AAAAJ:bFI3QPDXJZMC',
                 'authors' => 'A Karthikeyan, S Coulombe, AM Kietzig',
                 'publisherDetails' => 'International Journal of Heat and Mass Transfer 126, 287-296',
                 'nbCitations' => '1',
-                'citationsURL' => 'https://scholar.google.com/scholar?oi=bibs&hl=fr&cites=15502897746301575580',
+                'citationsURL' => 'https://scholar.google.com/scholar?oi=bibs&hl=en&cites=15502897746301575580',
                 'year' => '2018',
             ]
         ];
