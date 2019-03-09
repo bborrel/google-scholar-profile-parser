@@ -16,7 +16,7 @@ use Symfony\Component\DomCrawler\Crawler;
 class PublicationParser
 {
 
-    const GSCHOLAR_XPATH_PUBLICATIONS = '//table[@id="gsc_a_t"]/tbody[@id="gsc_a_b"]/tr[@class="gsc_a_tr"]';
+    const GSCHOLAR_XPATH = '//table[@id="gsc_a_t"]/tbody[@id="gsc_a_b"]/tr[@class="gsc_a_tr"]';
 
     const GSCHOLAR_CSS_CLASS_REFERENCE = 'gsc_a_t';
     const GSCHOLAR_CSS_CLASS_REFERENCE_TITLE = 'gsc_a_at';
@@ -43,7 +43,7 @@ class PublicationParser
         $data = [];
 
         /** @var Crawler $crawlerPublications */
-        $crawlerPublications = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_PUBLICATIONS);
+        $crawlerPublications = $this->crawler->filterXPath(self::GSCHOLAR_XPATH);
 
         /** @var DOMElement $domPublication */
         foreach ($crawlerPublications as $domPublication) {
@@ -83,7 +83,7 @@ class PublicationParser
      */
     private function parsePublicationTitle(DOMElement $node)
     {
-        $title = $gScholarPath = $authors = $publisherDetails = '';
+        $title = $publicationPath = $authors = $publisherDetails = '';
         $childNodeIndex = 0;
 
         foreach ($node->childNodes as $childNode) {
@@ -91,7 +91,7 @@ class PublicationParser
 
             if ($cssClass === self::GSCHOLAR_CSS_CLASS_REFERENCE_TITLE) {
                 $title = $childNode->textContent;
-                $gScholarPath = $childNode->getAttribute('data-href');
+                $publicationPath = $childNode->getAttribute('data-href');
             } elseif ($cssClass === self::GSCHOLAR_CSS_CLASS_GRAY && $childNodeIndex === 1) {
                 $authors = $childNode->textContent;
             } elseif ($cssClass === self::GSCHOLAR_CSS_CLASS_GRAY && $childNodeIndex === 2) {
@@ -103,7 +103,7 @@ class PublicationParser
 
         return [
             'title' => $title,
-            'gScholarPath' => $gScholarPath,
+            'publicationPath' => $publicationPath,
             'authors' => $authors,
             'publisherDetails' => $publisherDetails,
         ];

@@ -9,12 +9,14 @@ namespace GScholarProfileParser\DomCrawler;
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
+/**
+ * Crawls a Google Scholar profile page.
+ */
 class ProfilePageCrawler
 {
 
     const GSCHOLAR_SCHEME = 'https';
     const GSCHOLAR_HOSTNAME = 'scholar.google.com';
-    const GSCHOLAR_PATH = 'citations';
 
     /** @var Crawler crawler */
     private $crawler;
@@ -26,10 +28,9 @@ class ProfilePageCrawler
     public function __construct(Client $client, /* string */ $profileId)
     {
         $url = sprintf(
-            '%s://%s/%s?user=%s&pagesize=1000&sortby=pubdate',
+            '%s://%s/citations?user=%s&pagesize=1000&sortby=pubdate&hl=en',
             self::GSCHOLAR_SCHEME,
             self::GSCHOLAR_HOSTNAME,
-            self::GSCHOLAR_PATH,
             $profileId
         );
 
@@ -44,4 +45,11 @@ class ProfilePageCrawler
         return $this->crawler;
     }
 
+    /**
+     * @return string
+     */
+    public static function getSchemeAndHostname()
+    {
+        return self::GSCHOLAR_SCHEME . '://' . self::GSCHOLAR_HOSTNAME;
+    }
 }
