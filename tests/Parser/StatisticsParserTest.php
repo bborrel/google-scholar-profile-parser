@@ -24,7 +24,7 @@ class StatisticsParserTest extends TestCase
     protected function setUp(): void
     {
         $this->htmlFileName = __DIR__ . '/../data/8daWuo4AAAAJ.html';
-        $this->htmlFile = fopen($this->htmlFileName, 'r');
+        $this->htmlFile = fopen($this->htmlFileName, 'rb');
 
         $this->parsedStatistics = [
             'sinceYear' => '2014',
@@ -57,9 +57,14 @@ class StatisticsParserTest extends TestCase
 
     public function testParse()
     {
-        $statisticsParser = new StatisticsParser($this->createTestCrawler());
+        $statisticsParser = $this->createUnitUnderTest();
 
         $this->assertSame($this->parsedStatistics, $statisticsParser->parse());
+    }
+
+    private function createUnitUnderTest(): StatisticsParser
+    {
+        return new StatisticsParser($this->createTestCrawler());
     }
 
     private function createTestCrawler(): Crawler

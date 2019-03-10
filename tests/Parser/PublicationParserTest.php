@@ -24,7 +24,7 @@ class PublicationParserTest extends TestCase
     protected function setUp(): void
     {
         $this->htmlFileName = __DIR__ . '/../data/8daWuo4AAAAJ.html';
-        $this->htmlFile = fopen($this->htmlFileName, 'r');
+        $this->htmlFile = fopen($this->htmlFileName, 'rb');
 
         $this->parsedPublications = [
             [
@@ -51,11 +51,16 @@ class PublicationParserTest extends TestCase
         fclose($this->htmlFile);
     }
 
-    public function testParse()
+    public function testParse(): void
     {
-        $publicationParser = new PublicationParser($this->createTestCrawler());
+        $publicationParser = $this->createUnitUnderTest();
 
         $this->assertSame($this->parsedPublications, $publicationParser->parse());
+    }
+
+    private function createUnitUnderTest(): PublicationParser
+    {
+        return new PublicationParser($this->createTestCrawler());
     }
 
     private function createTestCrawler(): Crawler
