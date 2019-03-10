@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [1.1.1] - 2019-03-09
+### Added
+- Filter iterator to filters in publications published a specified year.
+
 ## [1.1.0] - 2019-03-08
 ### Added
 - Parsing of a scholar profile's statistics.
