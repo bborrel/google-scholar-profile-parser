@@ -28,17 +28,17 @@ class PublicationParser extends BaseParser implements Parser
      */
     public function parse()
     {
-        $data = [];
+        $publications = [];
 
         /** @var Crawler $crawlerPublications */
         $crawlerPublications = $this->crawler->filterXPath(self::GSCHOLAR_XPATH);
 
         /** @var DOMElement $domPublication */
         foreach ($crawlerPublications as $domPublication) {
-            $data[] = $this->parsePublication($domPublication);
+            $publications[] = $this->parsePublication($domPublication);
         }
 
-        return $data;
+        return $this->deduplicate($publications);
     }
 
     /**
@@ -135,5 +135,16 @@ class PublicationParser extends BaseParser implements Parser
         }
 
         return $text;
+    }
+
+    /**
+     * Returns $publications array filtered out from any title-duplicated publications.
+     *
+     * @param array $publications
+     * @return array $publications
+     */
+    private function deduplicate(array $publications)
+    {
+        return array_intersect_key($publications, array_unique(array_column($publications, 'title')));
     }
 }
