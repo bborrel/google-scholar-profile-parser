@@ -55,6 +55,9 @@ class StatisticsParserTest extends TestCase
         fclose($this->htmlFile);
     }
 
+    /**
+     * @covers \GScholarProfileParser\Parser\StatisticsParser
+     */
     public function testParse()
     {
         $statisticsParser = $this->createUnitUnderTest();

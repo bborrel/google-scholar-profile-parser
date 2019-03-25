@@ -47,6 +47,9 @@ class PublicationYearFilterIteratorTest extends TestCase
         $this->expectedPublications = [$publication1_2019];
     }
 
+    /**
+     * @covers \GScholarProfileParser\Iterator\PublicationYearFilterIterator::<public>
+     */
     public function testPublicationYearFilterFiltersIn(): void
     {
         $actualPublications = [];

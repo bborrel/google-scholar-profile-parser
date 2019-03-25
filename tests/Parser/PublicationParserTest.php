@@ -51,6 +51,9 @@ class PublicationParserTest extends TestCase
         fclose($this->htmlFile);
     }
 
+    /**
+     * @covers \GScholarProfileParser\Parser\PublicationParser
+     */
     public function testParse(): void
     {
         $publicationParser = $this->createUnitUnderTest();
