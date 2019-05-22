@@ -1,4 +1,5 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Packagist Version](https://img.shields.io/packagist/v/bborrel/google-scholar-profile-parser.svg?style=flat-square)](https://packagist.org/packages/psecio/parse)
 
 # Google Scholar Profile Parser
 
