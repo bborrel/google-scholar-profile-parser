@@ -66,7 +66,7 @@ changes, see the [CHANGELOG.md][11] file for details.
 
 [Benoit Borrel][12]
 
-# License
+## License
 
 This project is licensed under the GPL-3.0-only License, see the [LICENSE.md][13] file for details.
 
