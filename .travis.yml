@@ -1,0 +1,14 @@
+language: php
+
+php:
+    - 5.6
+    - 7.0
+    - 7.1
+    - 7.2
+    - 7.3
+
+install:
+    - composer --no-interaction --no-progress --no-suggest install
+
+script:
+    - ./vendor/bin/phpunit
