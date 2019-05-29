@@ -26,6 +26,7 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "php-coveralls/php-coveralls": "^2.1",
         "phpcompatibility/php-compatibility": "^9.1",
         "phpunit/phpunit": "^8.0"
     }
