@@ -25,6 +25,7 @@
         "sort-packages": true
     },
     "require-dev": {
+        "phpcompatibility/php-compatibility": "^9.1",
         "phpunit/phpunit": "^8.0"
     }
 }
