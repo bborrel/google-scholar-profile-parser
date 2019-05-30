@@ -8,6 +8,10 @@ install:
     - composer --no-interaction --no-progress --no-suggest install
 
 script:
+    - mkdir -p build/logs
     - ./vendor/bin/phpunit
     - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 5.6- src
     - "curl -H 'Accept: text/plain' https://security.symfony.com/check_lock -F lock=@./composer.lock"
+
+after_success:
+    - travis_retry ./vendor/bin/php-coveralls -v
