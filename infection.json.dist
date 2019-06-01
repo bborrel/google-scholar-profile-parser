@@ -6,7 +6,11 @@
         ]
     },
     "logs": {
-        "text": "build/logs/infection.log"
+        "badge": {
+                    "branch": "master"
+                }
+        "summary": "build/logs/infection-summary.log"
+        "text": "build/logs/infection.log",
     },
     "mutators": {
         "@default": true
