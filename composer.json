@@ -26,9 +26,15 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "edgedesign/phpqa": "^1.22",
         "infection/infection": "^0.13.1",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "object-calisthenics/phpcs-calisthenics-rules": "^3.5",
+        "pheromone/phpcs-security-audit": "^2.0",
         "php-coveralls/php-coveralls": "^2.1",
         "phpcompatibility/php-compatibility": "^9.1",
-        "phpunit/phpunit": "^8.0"
+        "phpstan/phpstan": "^0.11.15",
+        "phpunit/phpunit": "^8.0",
+        "vimeo/psalm": "^3.4"
     }
 }
