@@ -1,7 +1,6 @@
 phpcs:
   standard:
     - PSR1
-    - PSR2
     - PSR12
     - ObjectCalisthenics
     - PHPCompatibility
