@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [1.1.4] - 2019-09-06
+### Added
+- Static analysis tools wrapped by phpQA (PHPMetrics, PHPLOC, PHPCS, PHPMD, PDepend, PHPCPD, PHPStan and Psalm) with
+  additional PHPCS coding standards (ObjectCalisthenics, PHPCompatibility, Security).
+### Fixed
+- Fix example code in example-statistics.php.
+
 ## [1.1.3] - 2019-06-01
 ### Added
 - Unit tests for entities Publication and Statistics.
