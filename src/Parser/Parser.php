@@ -12,7 +12,7 @@ namespace GScholarProfileParser\Parser;
 interface Parser
 {
     /**
-     * @return array[int][]
+     * @return array<mixed, mixed>
      */
     public function parse();
 }

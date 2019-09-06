@@ -38,7 +38,7 @@ class ProfilePageCrawler
     }
 
     /**
-     * @return Crawler;
+     * @return Crawler
      */
     public function getCrawler()
     {

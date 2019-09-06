@@ -30,7 +30,7 @@ class Statistics
     /** @var int Year from which stats are computed */
     private $sinceYear;
 
-    /** var array[int][int] List of number of citations, per year */
+    /** var array<string, string> List of number of citations, per year */
     private $nbCitationsPerYear;
 
     public function __construct(array $properties)
@@ -107,7 +107,7 @@ class Statistics
     }
 
     /**
-     * @return array[]
+     * @return array<string, string>
      */
     public function getNbCitationsPerYear()
     {

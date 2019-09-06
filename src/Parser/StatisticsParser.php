@@ -21,11 +21,11 @@ class StatisticsParser extends BaseParser implements Parser
     const GSCHOLAR_XPATH_NB_CITATIONS = '//div[@class="gsc_md_hist_b"]/a[@class="gsc_g_a"]';
 
     /**
-     * @inheritdoc
+     * @return array<string, array<string, string>|string>
      */
     public function parse()
     {
-        $sinceYear['sinceYear'] = $this->parseSinceYear();
+        $sinceYear = $this->parseSinceYear();
 
         $metrics = $this->parseMetrics();
 
@@ -35,14 +35,17 @@ class StatisticsParser extends BaseParser implements Parser
     }
 
     /**
-     * @return string
+     * @return array<string, string>
      */
     private function parseSinceYear()
     {
         /** @var Crawler $crawlerSinceYear */
         $crawlerSinceYear = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_SINCE_YEAR);
 
-        return $this->extractSinceYear($crawlerSinceYear->getNode(0)->textContent);
+        /** @var DOMElement $element */
+        $element = $crawlerSinceYear->getNode(0);
+
+        return ['sinceYear' => $this->extractSinceYear($element->textContent)];
     }
 
     /**
@@ -51,51 +54,56 @@ class StatisticsParser extends BaseParser implements Parser
      */
     private function extractSinceYear($text)
     {
-        return trim(strstr($text, ' '));
+        return substr($text, strlen('Since '));
     }
 
     /**
-     * @return array[]
+     * @return array<string, string>
      */
     private function parseMetrics()
     {
-        $metrics = [];
-        $metricsKeys = ['nbCitations', 'nbCitationsSince', 'hIndex', 'hIndexSince', 'i10Index', 'i10IndexSince'];
+        $metrics = array_flip([
+            'nbCitations', 'nbCitationsSince', 'hIndex', 'hIndexSince', 'i10Index', 'i10IndexSince'
+        ]);
 
         /** @var Crawler $crawlerMetrics */
         $crawlerMetrics = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_METRICS);
 
         /** @var DOMElement $domMetric */
         foreach ($crawlerMetrics as $domMetric) {
-            $metrics[] = $domMetric->textContent;
+            $metrics[key($metrics)] = $domMetric->textContent;
+            next($metrics);
         }
 
-        return array_combine($metricsKeys, $metrics);
+        return $metrics;
     }
 
     /**
-     * @return array[][]
+     * @return array<string, array<string, string>>
      */
     private function parseNbCitationsPerYear()
     {
-        $years = $nbCitations = [];
+        $nbCitations = [];
 
         /** @var Crawler $crawlerYears */
         $crawlerYears = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_YEARS);
 
         /** @var DOMElement $domYear */
         foreach ($crawlerYears as $domYear) {
-            $years[] = $domYear->textContent;
+            $nbCitations[] = $domYear->textContent;
         }
+
+        $nbCitations = array_flip($nbCitations);
 
         /** @var Crawler $crawlerNbCitations */
         $crawlerNbCitations = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_NB_CITATIONS);
 
         /** @var DOMElement $domNbCitations */
         foreach ($crawlerNbCitations as $domNbCitations) {
-            $nbCitations[] = $domNbCitations->textContent;
+            $nbCitations[key($nbCitations)] = $domNbCitations->textContent;
+            next($nbCitations);
         }
 
-        return ['nbCitationsPerYear' => array_combine($years, $nbCitations)];
+        return ['nbCitationsPerYear' => $nbCitations];
     }
 }

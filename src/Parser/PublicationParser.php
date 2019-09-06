@@ -24,7 +24,7 @@ class PublicationParser extends BaseParser implements Parser
     const GSCHOLAR_CSS_CLASS_GRAY = 'gs_gray';
 
     /**
-     * @inheritdoc
+     * @return array<int, array<string, string>>
      */
     public function parse()
     {
@@ -43,7 +43,7 @@ class PublicationParser extends BaseParser implements Parser
 
     /**
      * @param DOMElement $domPublication
-     * @return array
+     * @return array<string, string>
      */
     private function parsePublication(DOMElement $domPublication)
     {
@@ -67,13 +67,14 @@ class PublicationParser extends BaseParser implements Parser
 
     /**
      * @param DOMElement $node
-     * @return array
+     * @return array<string, string>
      */
     private function parsePublicationTitle(DOMElement $node)
     {
         $title = $publicationPath = $authors = $publisherDetails = '';
         $childNodeIndex = 0;
 
+        /** @var DOMElement $childNode */
         foreach ($node->childNodes as $childNode) {
             $cssClass = $childNode->getAttribute('class');
 
@@ -99,7 +100,7 @@ class PublicationParser extends BaseParser implements Parser
 
     /**
      * @param DOMElement $node
-     * @return array
+     * @return array<string, string>
      */
     private function parsePublicationCitedBy(DOMElement $node)
     {
@@ -107,15 +108,18 @@ class PublicationParser extends BaseParser implements Parser
             return [];
         }
 
+        /** @var DOMElement $firstChild */
+        $firstChild = $node->firstChild;
+
         return [
             'nbCitations' => $node->textContent,
-            'citationsURL' => $node->firstChild->getAttribute('href')
+            'citationsURL' => $firstChild->getAttribute('href')
         ];
     }
 
     /**
      * @param DOMElement $node
-     * @return array
+     * @return array<string, string>
      */
     private function parsePublicationYear(DOMElement $node)
     {
@@ -124,7 +128,7 @@ class PublicationParser extends BaseParser implements Parser
 
     /**
      * @param string $text A Publisher details text like 'Carbon 140, 201-209, 2018'
-     * @return bool|string
+     * @return string
      */
     private function extractPublisherDetailsWithoutYear($text)
     {
@@ -140,8 +144,8 @@ class PublicationParser extends BaseParser implements Parser
     /**
      * Returns $publications array filtered out from any title-duplicated publications.
      *
-     * @param array $publications
-     * @return array $publications
+     * @param array<int, array<string, string>> $publications
+     * @return array<int, array<string, string>>
      */
     private function deduplicate(array $publications)
     {

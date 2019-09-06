@@ -62,6 +62,9 @@ class Publication
         return $this->publicationPath;
     }
 
+    /**
+     * @return string
+     */
     public function getPublicationURL()
     {
         return ProfilePageCrawler::getSchemeAndHostname() . $this->getPublicationPath();
