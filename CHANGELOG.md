@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [2.0.0] - 2019-09-11
+### Changed
+- Migrate code from PHP 5.6 to PHP 7.1 by specifying methods arguments and returns types.
+
 ## [1.1.4] - 2019-09-06
 ### Added
 - Static analysis tools wrapped by phpQA (PHPMetrics, PHPLOC, PHPCS, PHPMD, PDepend, PHPCPD, PHPStan and Psalm) with
