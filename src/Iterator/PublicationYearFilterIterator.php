@@ -33,7 +33,7 @@ class PublicationYearFilterIterator extends FilterIterator
     /**
      * @return bool
      */
-    public function accept()
+    public function accept() : bool
     {
         if (!$this->getInnerIterator()->valid()) {
             return false;

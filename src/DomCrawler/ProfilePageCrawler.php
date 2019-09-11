@@ -15,8 +15,8 @@ use Symfony\Component\DomCrawler\Crawler;
 class ProfilePageCrawler
 {
 
-    const GSCHOLAR_SCHEME = 'https';
-    const GSCHOLAR_HOSTNAME = 'scholar.google.com';
+    public const GSCHOLAR_SCHEME = 'https';
+    public const GSCHOLAR_HOSTNAME = 'scholar.google.com';
 
     /** @var Crawler crawler */
     private $crawler;
@@ -25,7 +25,7 @@ class ProfilePageCrawler
      * @param Client $client
      * @param string $profileId
      */
-    public function __construct(Client $client, /* string */ $profileId)
+    public function __construct(Client $client, string $profileId)
     {
         $url = sprintf(
             '%s://%s/citations?user=%s&pagesize=1000&sortby=pubdate&hl=en',
@@ -40,7 +40,7 @@ class ProfilePageCrawler
     /**
      * @return Crawler
      */
-    public function getCrawler()
+    public function getCrawler() : Crawler
     {
         return $this->crawler;
     }
@@ -48,7 +48,7 @@ class ProfilePageCrawler
     /**
      * @return string
      */
-    public static function getSchemeAndHostname()
+    public static function getSchemeAndHostname() : string
     {
         return self::GSCHOLAR_SCHEME . '://' . self::GSCHOLAR_HOSTNAME;
     }

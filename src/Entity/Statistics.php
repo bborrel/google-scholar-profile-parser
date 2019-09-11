@@ -43,6 +43,7 @@ class Statistics
         $this->i10IndexSince = (int)$properties['i10IndexSince'];
         $this->sinceYear = (int)$properties['sinceYear'];
 
+        /** @var string $nbCitationsPerYear */
         foreach ($properties['nbCitationsPerYear'] as &$nbCitationsPerYear) {
             $nbCitationsPerYear = (int)$nbCitationsPerYear;
         }
@@ -53,7 +54,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getNbCitations()
+    public function getNbCitations() : int
     {
         return $this->nbCitations;
     }
@@ -61,7 +62,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getNbCitationsSince()
+    public function getNbCitationsSince() : int
     {
         return $this->nbCitationsSince;
     }
@@ -69,7 +70,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getHIndex()
+    public function getHIndex() : int
     {
         return $this->hIndex;
     }
@@ -77,7 +78,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getHIndexSince()
+    public function getHIndexSince() : int
     {
         return $this->hIndexSince;
     }
@@ -85,7 +86,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getI10Index()
+    public function getI10Index() : int
     {
         return $this->i10Index;
     }
@@ -93,7 +94,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getI10IndexSince()
+    public function getI10IndexSince() : int
     {
         return $this->i10IndexSince;
     }
@@ -101,7 +102,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getSinceYear()
+    public function getSinceYear() : int
     {
         return $this->sinceYear;
     }
@@ -109,7 +110,7 @@ class Statistics
     /**
      * @return array<string, string>
      */
-    public function getNbCitationsPerYear()
+    public function getNbCitationsPerYear() : array
     {
         return $this->nbCitationsPerYear;
     }

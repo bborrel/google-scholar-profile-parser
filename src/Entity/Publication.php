@@ -42,14 +42,14 @@ class Publication
         $this->authors = $properties['authors'];
         $this->publisherDetails = $properties['publisherDetails'];
         $this->nbCitations = isset($properties['nbCitations']) ? (int)$properties['nbCitations'] : null;
-        $this->citationsURL = isset($properties['citationsURL']) ? $properties['citationsURL'] : null;
+        $this->citationsURL = $properties['citationsURL'] ?? null;
         $this->year = (int)$properties['year'];
     }
 
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle() : string
     {
         return $this->title;
     }
@@ -57,7 +57,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublicationPath()
+    public function getPublicationPath() : string
     {
         return $this->publicationPath;
     }
@@ -65,7 +65,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublicationURL()
+    public function getPublicationURL() : string
     {
         return ProfilePageCrawler::getSchemeAndHostname() . $this->getPublicationPath();
     }
@@ -73,7 +73,7 @@ class Publication
     /**
      * @return string
      */
-    public function getAuthors()
+    public function getAuthors() : string
     {
         return $this->authors;
     }
@@ -81,7 +81,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublisherDetails()
+    public function getPublisherDetails() : string
     {
         return $this->publisherDetails;
     }
@@ -89,7 +89,7 @@ class Publication
     /**
      * @return int|null
      */
-    public function getNbCitations()
+    public function getNbCitations() : ?int
     {
         return $this->nbCitations;
     }
@@ -97,7 +97,7 @@ class Publication
     /**
      * @return string|null
      */
-    public function getCitationsURL()
+    public function getCitationsURL() : ?string
     {
         return $this->citationsURL;
     }
@@ -105,7 +105,7 @@ class Publication
     /**
      * @return int
      */
-    public function getYear()
+    public function getYear() : int
     {
         return $this->year;
     }
