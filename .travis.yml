@@ -7,16 +7,31 @@ php:
 install:
     - composer --no-interaction --no-progress --no-suggest install
 
+# Code Climate
+before_script:
+    - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+    - chmod +x ./cc-test-reporter
+    - ./cc-test-reporter before-build
+
 script:
     - mkdir -p build/logs
     - ./vendor/bin/phpunit
     - ./vendor/bin/infection --min-msi=65 --threads=4 --show-mutations
     - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.1- src
     - "curl -H 'Accept: text/plain' https://security.symfony.com/check_lock -F lock=@./composer.lock"
+    # Code Climate
+    - bundle exec rspec
+
+# Code Climate
+after_script:
+    - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 after_success:
     - travis_retry ./vendor/bin/php-coveralls -v
 
 env:
     global:
-        secure: CGi4PFhlylwJf/NdP3av0td3TXgbD/HOt751QPYZU6FzyXU+6dKf3WN4I43pPDMHBIVYy3BzKcJv6HPB5obL87cpQ8mVrL7f+a2vMy/xVjYA7Hka3mABKBBE5trjxRDjTCxit341WK107mjxHwLlgdNhZEWEOiBmGmgJ05QrUpDJ4sL0JraUIYOAGSz3WIqVcTMvyAUh/ccVT74dKOKfLfwaE3yb79yMzonGRSiqCZQLrgXNzVx0WfVTVUKoSStka6wzVDnKf1+O/50xX2qcAjRoCmyMQHv3pK4DlrJ3q9ZeELEwMO1MHGrrv0u3uDUrLPkhVP0//sRLEwPTB/bLuaf8i7s69lRN3lGAp672urfr4ONl5gd4vOgL0lbfQDr5sAmgsR6jwJcWYe+DdkyEry40JCvEFsUvPedYfxmcVCD1lF+8MCZdNEhUHPD7VlZTBHMLOVEK7ON2wQ+RsruDnXMP3WA+vn2bgmhOoml/n4ZKoNP3aGsvMIFQHCp2/+u2au/ZfOCogaqoZEAmnWY7/b317MWw/ROhjKoCcADk0ckukpkI4pvfxSrbR+yBFuOWIh+sOu9ps4THTOQSlc2PHztZ7+AmIfuDMctP6IlBTag4b2hVYtDuV67VcPsToVWjbGBIKZOdc+OVk+Qct+Vu1iVwGOy0HGJBlV180mnTIFY=
+        # Infection + Stryker
+        - secure: CGi4PFhlylwJf/NdP3av0td3TXgbD/HOt751QPYZU6FzyXU+6dKf3WN4I43pPDMHBIVYy3BzKcJv6HPB5obL87cpQ8mVrL7f+a2vMy/xVjYA7Hka3mABKBBE5trjxRDjTCxit341WK107mjxHwLlgdNhZEWEOiBmGmgJ05QrUpDJ4sL0JraUIYOAGSz3WIqVcTMvyAUh/ccVT74dKOKfLfwaE3yb79yMzonGRSiqCZQLrgXNzVx0WfVTVUKoSStka6wzVDnKf1+O/50xX2qcAjRoCmyMQHv3pK4DlrJ3q9ZeELEwMO1MHGrrv0u3uDUrLPkhVP0//sRLEwPTB/bLuaf8i7s69lRN3lGAp672urfr4ONl5gd4vOgL0lbfQDr5sAmgsR6jwJcWYe+DdkyEry40JCvEFsUvPedYfxmcVCD1lF+8MCZdNEhUHPD7VlZTBHMLOVEK7ON2wQ+RsruDnXMP3WA+vn2bgmhOoml/n4ZKoNP3aGsvMIFQHCp2/+u2au/ZfOCogaqoZEAmnWY7/b317MWw/ROhjKoCcADk0ckukpkI4pvfxSrbR+yBFuOWIh+sOu9ps4THTOQSlc2PHztZ7+AmIfuDMctP6IlBTag4b2hVYtDuV67VcPsToVWjbGBIKZOdc+OVk+Qct+Vu1iVwGOy0HGJBlV180mnTIFY=
+        # Code Climate
+        - CC_TEST_REPORTER_ID=99c70ca53c6e46630bf431f10278379710ade7f2a836b2046522a38be6d5841e
