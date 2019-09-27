@@ -2,7 +2,7 @@ language: php
 
 php:
     - '7.2'
-#    - '7.3'
+    - '7.3'
 
 install:
     - composer --no-interaction --no-progress --no-suggest install
@@ -12,7 +12,6 @@ before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
-    - gem install bundler
 
 script:
     - mkdir -p build/logs
@@ -20,8 +19,6 @@ script:
     - ./vendor/bin/infection --min-msi=65 --threads=4 --show-mutations
     - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.1- src
     - "curl -H 'Accept: text/plain' https://security.symfony.com/check_lock -F lock=@./composer.lock"
-    # Code Climate
-    - bundle exec rspec
 
 # Code Climate
 after_script:
