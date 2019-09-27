@@ -2,7 +2,7 @@ language: php
 
 php:
     - '7.2'
-    - '7.3'
+#    - '7.3'
 
 install:
     - composer --no-interaction --no-progress --no-suggest install
@@ -12,6 +12,7 @@ before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
     - ./cc-test-reporter before-build
+    - gem install bundler
 
 script:
     - mkdir -p build/logs
