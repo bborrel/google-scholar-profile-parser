@@ -7,7 +7,6 @@ php:
 install:
     - composer --no-interaction --no-progress --no-suggest install
 
-# Code Climate
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
     - chmod +x ./cc-test-reporter
@@ -20,7 +19,6 @@ script:
     - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 7.1- src
     - "curl -H 'Accept: text/plain' https://security.symfony.com/check_lock -F lock=@./composer.lock"
 
-# Code Climate
 after_script:
     - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 

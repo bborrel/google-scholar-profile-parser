@@ -9,6 +9,7 @@
 [![Build Status](https://travis-ci.com/bborrel/google-scholar-profile-parser.svg?branch=master)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Coverage Status](https://coveralls.io/repos/github/bborrel/google-scholar-profile-parser/badge.svg?branch=master)](https://coveralls.io/github/bborrel/google-scholar-profile-parser?branch=master)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/bborrel/google-scholar-profile-parser/master)](https://stryker-mutator.github.io)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 Google Scholar Profile Parser is a PHP library which parses the HTML of a scholar's profile page from Google Scholar 
 website and transforms its data into a regular PHP data structure.
