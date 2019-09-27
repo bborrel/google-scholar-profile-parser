@@ -3,6 +3,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [2.0.1] - 2019-09-27
+### Added
+- Static analysis by Code Climate (setup with plugins Phan, PHPMD and SonarPHP).
+
 ## [2.0.0] - 2019-09-11
 ### Changed
 - Migrate code from PHP 5.6 to PHP 7.1 by specifying methods arguments and returns types.
