@@ -5,7 +5,12 @@ php:
     - '7.3'
 
 env:
-  - XDEBUG_MODE=coverage
+  - XDEBUG.MODE=coverage
+
+matrix:
+  exclude:
+    - php: 7.2
+      env: XDEBUG.MODE=coverage 
 
 install:
     - composer --no-interaction --no-progress install
