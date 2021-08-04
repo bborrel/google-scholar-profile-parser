@@ -5,7 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/bborrel/google-scholar-profile-parser/downloads)](https://packagist.org/packages/bborrel/google-scholar-profile-parser)
 [![License](https://poser.pugx.org/bborrel/google-scholar-profile-parser/license)](https://packagist.org/packages/bborrel/google-scholar-profile-parser)
 
-[![Tested on PHP 7.2 to 7.3](https://img.shields.io/badge/tested%20on-PHP%207.2%20|%207.3%20-brightgreen.svg?maxAge=2419200)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
+[![Tested on PHP 7.2 to 7.4](https://img.shields.io/badge/tested%20on-PHP%207.2%20|%207.3%20|%207.44%20-brightgreen.svg?maxAge=2419200)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Build Status](https://travis-ci.com/bborrel/google-scholar-profile-parser.svg?branch=master)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Coverage Status](https://coveralls.io/repos/github/bborrel/google-scholar-profile-parser/badge.svg?branch=master)](https://coveralls.io/github/bborrel/google-scholar-profile-parser?branch=master)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/bborrel/google-scholar-profile-parser/master)](https://stryker-mutator.github.io)
