@@ -80,7 +80,7 @@ class PublicationParser extends BaseParser implements Parser
 
             if ($cssClass === self::GSCHOLAR_CSS_CLASS_REFERENCE_TITLE) {
                 $title = $childNode->textContent;
-                $publicationPath = $childNode->getAttribute('data-href');
+                $publicationPath = $childNode->getAttribute('href');
             } elseif ($cssClass === self::GSCHOLAR_CSS_CLASS_GRAY && $childNodeIndex === 1) {
                 $authors = $childNode->textContent;
             } elseif ($cssClass === self::GSCHOLAR_CSS_CLASS_GRAY && $childNodeIndex === 2) {
