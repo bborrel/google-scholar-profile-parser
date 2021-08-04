@@ -5,7 +5,7 @@ php:
     - '7.3'
 
 install:
-    - composer --no-interaction --no-progress --no-suggest install
+    - composer --no-interaction --no-progress install
 
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
