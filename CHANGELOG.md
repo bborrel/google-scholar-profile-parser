@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [2.1.0] - 2021-08-04
+### Changed
+- Composer: upgrade dev dependencies for Composer 2
+- Travis: add support of xDebug 3 and PHP 7.4
+### Fixed
+- Parsing of publication URL following modification from Google Scholar (issue #3)
+
 ## [2.0.1] - 2019-09-27
 ### Added
 - Static analysis by Code Climate (setup with plugins Phan, PHPMD and SonarPHP).
