@@ -2,11 +2,6 @@
     "name": "bborrel/google-scholar-profile-parser",
     "description": "Parses a profile page from Google Scholar.",
     "type": "library",
-    "require": {
-        "php": ">=7.1.0",
-        "ext-dom": "*",
-        "fabpot/goutte": "^3.2"
-    },
     "license": "GPL-3.0-only",
     "authors": [
         {
@@ -14,15 +9,10 @@
             "email": "benoit@borrel.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "GScholarProfileParser\\": "src/"
-        },
-        "exclude-from-classmap": ["/tests/"]
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "sort-packages": true
+    "require": {
+        "php": ">=7.4",
+        "ext-dom": "*",
+        "fabpot/goutte": "^3.2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
@@ -36,5 +26,15 @@
         "phpstan/phpstan": "^0.12.0",
         "phpunit/phpunit": "^8.0",
         "vimeo/psalm": "^4.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "GScholarProfileParser\\": "src/"
+        },
+        "exclude-from-classmap": ["/tests/"]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
     }
 }
