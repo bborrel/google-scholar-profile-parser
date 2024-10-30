@@ -17,7 +17,7 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "edgedesign/phpqa": "^1.22",
-        "infection/infection": "^0.15.0",
+        "infection/infection": "^0.26",
         "pheromone/phpcs-security-audit": "^2.0",
         "php-coveralls/php-coveralls": "^2.1",
         "php-parallel-lint/php-parallel-lint": "^1.4",
