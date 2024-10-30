@@ -15,7 +15,7 @@
         "fabpot/goutte": "^3.2"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "edgedesign/phpqa": "^1.22",
         "infection/infection": "^0.15.0",
         "pheromone/phpcs-security-audit": "^2.0",
