@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [2.2.0] - 2025-02-05
+### Changed
+- fabpot/goutte: upgrade from 3.3.1 to 4.0.3
+- dev dependencies: upgrade to latest versions compatible with PHP 7.4
+- rename branch master into main
+
 ## [2.1.0] - 2021-08-04
 ### Changed
 - Composer: upgrade dev dependencies for Composer 2
