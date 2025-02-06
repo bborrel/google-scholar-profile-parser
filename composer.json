@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": ">=8.1",
         "ext-dom": "*",
         "fabpot/goutte": "^4.0"
     },
