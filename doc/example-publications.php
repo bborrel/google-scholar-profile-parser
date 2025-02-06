@@ -6,13 +6,18 @@ use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
 use GScholarProfileParser\Iterator\PublicationYearFilterIterator;
 use GScholarProfileParser\Parser\PublicationParser;
 use GScholarProfileParser\Entity\Publication;
-use Goutte\Client;
+use Symfony\Component\BrowserKit\HttpBrowser;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-/** @var Client $client */
-$client = new Client();
+/** @var HttpClientInterface $client */
+$client = HttpClient::create();
+
+/** @var HttpBrowser $browser */
+$browser = new HttpBrowser($client);
 
 /** @var ProfilePageCrawler $crawler */
-$crawler = new ProfilePageCrawler($client, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
+$crawler = new ProfilePageCrawler($browser, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
 
 /** @var PublicationParser $parser */
 $parser = new PublicationParser($crawler->getCrawler());

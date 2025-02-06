@@ -2,16 +2,23 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Goutte\Client;
+
 use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
 use GScholarProfileParser\Entity\Statistics;
 use GScholarProfileParser\Parser\StatisticsParser;
+use Symfony\Component\BrowserKit\HttpBrowser;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
-/** @var Client $client */
-$client = new Client();
+/** @var HttpClientInterface $client */
+$client = HttpClient::create();
+
+/** @var HttpBrowser $browser */
+$browser = new HttpBrowser($client);
+
 
 /** @var ProfilePageCrawler $crawler */
-$crawler = new ProfilePageCrawler($client, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
+$crawler = new ProfilePageCrawler($browser, '8daWuo4AAAAJ'); // the second parameter is the scholar's profile id
 
 /** @var StatisticsParser $parser */
 $parser = new StatisticsParser($crawler->getCrawler());
