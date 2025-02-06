@@ -10,7 +10,7 @@
          verbose="true">
     <testsuites>
         <testsuite name="Google Scholar Profile Parser">
-            <directory suffix="Test.php" phpVersion="7.2.0" phpVersionOperator=">=">tests</directory>
+            <directory suffix="Test.php" phpVersion="8.1.0" phpVersionOperator=">=">tests</directory>
         </testsuite>
     </testsuites>
 

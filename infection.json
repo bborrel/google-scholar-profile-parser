@@ -1,4 +1,5 @@
 {
+    "$schema": "vendor/infection/infection/resources/schema.json",
     "timeout": 10,
     "source": {
         "directories": [
@@ -6,9 +7,6 @@
         ]
     },
     "logs": {
-        "badge": {
-                    "branch": "master"
-                },
         "summary": "build/logs/infection-summary.log",
         "text": "build/logs/infection.log"
     },

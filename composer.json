@@ -17,16 +17,21 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-        "edgedesign/phpqa": "^1.22",
-        "infection/infection": "^0.26",
+        "edgedesign/phpqa": "^1.26",
+        "enlightn/security-checker": "*",
+        "friendsofphp/php-cs-fixer": "*",
+        "infection/infection": "^0.27.11",
+        "nette/neon": "*",
         "pheromone/phpcs-security-audit": "^2.0",
-        "php-coveralls/php-coveralls": "^2.1",
-        "php-parallel-lint/php-parallel-lint": "^1.4",
-        "phpcompatibility/php-compatibility": "^9.1",
-        "phpstan/phpstan": "^0.12.0",
+        "php-coveralls/php-coveralls": "^2.7",
+        "php-parallel-lint/php-console-highlighter": "*",
+        "php-parallel-lint/php-parallel-lint": "*",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "phpstan/phpstan": "*",
         "phpunit/phpunit": "^9.6",
-        "symplify/phpstan-rules": "^9.3",
-        "vimeo/psalm": "^4.9"
+        "qossmic/deptrac": "^2.0",
+        "symplify/phpstan-rules": "^14.2",
+        "vimeo/psalm": "*"
     },
     "autoload": {
         "psr-4": {
