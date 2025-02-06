@@ -36,7 +36,7 @@ class ProfilePageCrawler
     /**
      * @return Crawler
      */
-    public function getCrawler() : Crawler
+    public function getCrawler(): Crawler
     {
         return $this->crawler;
     }
@@ -44,7 +44,7 @@ class ProfilePageCrawler
     /**
      * @return string
      */
-    public static function getSchemeAndHostname() : string
+    public static function getSchemeAndHostname(): string
     {
         return self::GSCHOLAR_SCHEME . '://' . self::GSCHOLAR_HOSTNAME;
     }

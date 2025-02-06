@@ -54,7 +54,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getNbCitations() : int
+    public function getNbCitations(): int
     {
         return $this->nbCitations;
     }
@@ -62,7 +62,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getNbCitationsSince() : int
+    public function getNbCitationsSince(): int
     {
         return $this->nbCitationsSince;
     }
@@ -70,7 +70,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getHIndex() : int
+    public function getHIndex(): int
     {
         return $this->hIndex;
     }
@@ -78,7 +78,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getHIndexSince() : int
+    public function getHIndexSince(): int
     {
         return $this->hIndexSince;
     }
@@ -86,7 +86,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getI10Index() : int
+    public function getI10Index(): int
     {
         return $this->i10Index;
     }
@@ -94,7 +94,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getI10IndexSince() : int
+    public function getI10IndexSince(): int
     {
         return $this->i10IndexSince;
     }
@@ -102,7 +102,7 @@ class Statistics
     /**
      * @return int
      */
-    public function getSinceYear() : int
+    public function getSinceYear(): int
     {
         return $this->sinceYear;
     }
@@ -110,7 +110,7 @@ class Statistics
     /**
      * @return array<string, string>
      */
-    public function getNbCitationsPerYear() : array
+    public function getNbCitationsPerYear(): array
     {
         return $this->nbCitationsPerYear;
     }

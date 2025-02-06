@@ -26,7 +26,7 @@ class PublicationParser extends BaseParser implements Parser
     /**
      * @return array<int, array<string, string>>
      */
-    public function parse() : array
+    public function parse(): array
     {
         $publications = [];
 
@@ -45,7 +45,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param DOMElement $domPublication
      * @return array<string, string>
      */
-    private function parsePublication(DOMElement $domPublication) : array
+    private function parsePublication(DOMElement $domPublication): array
     {
         $title = $citation = $year = [];
 
@@ -69,7 +69,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param DOMElement $node
      * @return array<string, string>
      */
-    private function parsePublicationTitle(DOMElement $node) : array
+    private function parsePublicationTitle(DOMElement $node): array
     {
         $title = $publicationPath = $authors = $publisherDetails = '';
         $childNodeIndex = 0;
@@ -97,7 +97,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param DOMElement $node
      * @return array<string, string>
      */
-    private function parsePublicationCitedBy(DOMElement $node) : array
+    private function parsePublicationCitedBy(DOMElement $node): array
     {
         if (!is_numeric($node->textContent)) {
             return [];
@@ -116,7 +116,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param DOMElement $node
      * @return array<string, string>
      */
-    private function parsePublicationYear(DOMElement $node) : array
+    private function parsePublicationYear(DOMElement $node): array
     {
         return ['year' => $node->textContent];
     }
@@ -125,7 +125,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param string $text A Publisher details text like 'Carbon 140, 201-209, 2018'
      * @return string
      */
-    private function extractPublisherDetailsWithoutYear(string $text) : string
+    private function extractPublisherDetailsWithoutYear(string $text): string
     {
         $pos = strrpos($text, ',');
 
@@ -142,7 +142,7 @@ class PublicationParser extends BaseParser implements Parser
      * @param array<int, array<string, string>> $publications
      * @return array<int, array<string, string>>
      */
-    private function deduplicate(array $publications) : array
+    private function deduplicate(array $publications): array
     {
         return array_intersect_key($publications, array_unique(array_column($publications, 'title')));
     }

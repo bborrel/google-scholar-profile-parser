@@ -24,7 +24,7 @@ class StatisticsParser extends BaseParser implements Parser
     /**
      * @return array<string, array<string, string>|string>
      */
-    public function parse() : array
+    public function parse(): array
     {
         $sinceYear = $this->parseSinceYear();
 
@@ -38,7 +38,7 @@ class StatisticsParser extends BaseParser implements Parser
     /**
      * @return array<string, string>
      */
-    private function parseSinceYear() : array
+    private function parseSinceYear(): array
     {
         /** @var Crawler $crawlerSinceYear */
         $crawlerSinceYear = $this->crawler->filterXPath(self::GSCHOLAR_XPATH_SINCE_YEAR);
@@ -53,7 +53,7 @@ class StatisticsParser extends BaseParser implements Parser
      * @param string $text 'Since YYYY'
      * @return string
      */
-    private function extractSinceYear(string $text) : string
+    private function extractSinceYear(string $text): string
     {
         return substr($text, strlen('Since '));
     }
@@ -61,10 +61,15 @@ class StatisticsParser extends BaseParser implements Parser
     /**
      * @return array<string, string>
      */
-    private function parseMetrics() : array
+    private function parseMetrics(): array
     {
         $metrics = array_flip([
-            'nbCitations', 'nbCitationsSince', 'hIndex', 'hIndexSince', 'i10Index', 'i10IndexSince'
+            'nbCitations',
+            'nbCitationsSince',
+            'hIndex',
+            'hIndexSince',
+            'i10Index',
+            'i10IndexSince'
         ]);
 
         /** @var Crawler $crawlerMetrics */
@@ -82,7 +87,7 @@ class StatisticsParser extends BaseParser implements Parser
     /**
      * @return array<string, array<string, string>>
      */
-    private function parseNbCitationsPerYear() : array
+    private function parseNbCitationsPerYear(): array
     {
         $nbCitationsPerYear = [];
 

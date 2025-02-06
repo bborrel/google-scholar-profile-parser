@@ -49,7 +49,7 @@ class Publication
     /**
      * @return string
      */
-    public function getTitle() : string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -57,7 +57,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublicationPath() : string
+    public function getPublicationPath(): string
     {
         return $this->publicationPath;
     }
@@ -65,7 +65,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublicationURL() : string
+    public function getPublicationURL(): string
     {
         return ProfilePageCrawler::getSchemeAndHostname() . $this->getPublicationPath();
     }
@@ -73,7 +73,7 @@ class Publication
     /**
      * @return string
      */
-    public function getAuthors() : string
+    public function getAuthors(): string
     {
         return $this->authors;
     }
@@ -81,7 +81,7 @@ class Publication
     /**
      * @return string
      */
-    public function getPublisherDetails() : string
+    public function getPublisherDetails(): string
     {
         return $this->publisherDetails;
     }
@@ -89,7 +89,7 @@ class Publication
     /**
      * @return int|null
      */
-    public function getNbCitations() : ?int
+    public function getNbCitations(): ?int
     {
         return $this->nbCitations;
     }
@@ -97,7 +97,7 @@ class Publication
     /**
      * @return string|null
      */
-    public function getCitationsURL() : ?string
+    public function getCitationsURL(): ?string
     {
         return $this->citationsURL;
     }
@@ -105,7 +105,7 @@ class Publication
     /**
      * @return int
      */
-    public function getYear() : int
+    public function getYear(): int
     {
         return $this->year;
     }

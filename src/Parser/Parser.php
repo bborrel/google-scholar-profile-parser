@@ -14,5 +14,5 @@ interface Parser
     /**
      * @return array<mixed, mixed>
      */
-    public function parse() : array;
+    public function parse(): array;
 }
