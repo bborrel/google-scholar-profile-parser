@@ -18,8 +18,7 @@ class ProfilePageCrawler
     public const GSCHOLAR_SCHEME = 'https';
     public const GSCHOLAR_HOSTNAME = 'scholar.google.com';
 
-    /** @var Crawler crawler */
-    private $crawler;
+    private Crawler $crawler;
 
     public function __construct(HttpBrowser $browser, string $profileId)
     {
@@ -33,17 +32,11 @@ class ProfilePageCrawler
         $this->crawler = $browser->request('GET', $url);
     }
 
-    /**
-     * @return Crawler
-     */
     public function getCrawler(): Crawler
     {
         return $this->crawler;
     }
 
-    /**
-     * @return string
-     */
     public static function getSchemeAndHostname(): string
     {
         return self::GSCHOLAR_SCHEME . '://' . self::GSCHOLAR_HOSTNAME;

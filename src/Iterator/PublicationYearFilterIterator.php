@@ -17,12 +17,8 @@ class PublicationYearFilterIterator extends FilterIterator
 {
 
     /** @var int Year when publication was published */
-    private $year;
+    private int $year;
 
-    /**
-     * @param Iterator $iterator
-     * @param int $filter
-     */
     public function __construct(Iterator $iterator, $filter)
     {
         parent::__construct($iterator);
@@ -30,9 +26,6 @@ class PublicationYearFilterIterator extends FilterIterator
         $this->year = $filter;
     }
 
-    /**
-     * @return bool
-     */
     public function accept(): bool
     {
         if (!$this->getInnerIterator()->valid()) {

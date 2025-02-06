@@ -10,28 +10,28 @@ class Statistics
 {
 
     /** @var int Number of citations */
-    private $nbCitations;
+    private int $nbCitations;
 
     /** @var int Number of citations, since $sinceYear */
-    private $nbCitationsSince;
+    private int $nbCitationsSince;
 
     /** @var int h-index */
-    private $hIndex;
+    private int $hIndex;
 
     /** @var int h-index, since $sinceYear */
-    private $hIndexSince;
+    private int $hIndexSince;
 
     /** @var int i10-index */
-    private $i10Index;
+    private int $i10Index;
 
     /** @var int i10-index, since $sinceYear */
-    private $i10IndexSince;
+    private int $i10IndexSince;
 
     /** @var int Year from which stats are computed */
-    private $sinceYear;
+    private int $sinceYear;
 
     /** var array<string, string> List of number of citations, per year */
-    private $nbCitationsPerYear;
+    private array $nbCitationsPerYear;
 
     public function __construct(array $properties)
     {
@@ -51,65 +51,41 @@ class Statistics
         $this->nbCitationsPerYear = $properties['nbCitationsPerYear'];
     }
 
-    /**
-     * @return int
-     */
     public function getNbCitations(): int
     {
         return $this->nbCitations;
     }
 
-    /**
-     * @return int
-     */
     public function getNbCitationsSince(): int
     {
         return $this->nbCitationsSince;
     }
 
-    /**
-     * @return int
-     */
     public function getHIndex(): int
     {
         return $this->hIndex;
     }
 
-    /**
-     * @return int
-     */
     public function getHIndexSince(): int
     {
         return $this->hIndexSince;
     }
 
-    /**
-     * @return int
-     */
     public function getI10Index(): int
     {
         return $this->i10Index;
     }
 
-    /**
-     * @return int
-     */
     public function getI10IndexSince(): int
     {
         return $this->i10IndexSince;
     }
 
-    /**
-     * @return int
-     */
     public function getSinceYear(): int
     {
         return $this->sinceYear;
     }
 
-    /**
-     * @return array<string, string>
-     */
     public function getNbCitationsPerYear(): array
     {
         return $this->nbCitationsPerYear;
