@@ -13,7 +13,7 @@ use function strlen;
 /**
  * Parses a scholar's profile page from Google Scholar and returns its statistics.
  */
-class StatisticsParser extends BaseParser implements Parser
+class StatisticsParser extends BaseParser implements ParserInterface
 {
 
     public const GSCHOLAR_XPATH_SINCE_YEAR = '//table[@id="gsc_rsb_st"]//th[3]';
@@ -69,7 +69,7 @@ class StatisticsParser extends BaseParser implements Parser
             'hIndex',
             'hIndexSince',
             'i10Index',
-            'i10IndexSince'
+            'i10IndexSince',
         ]);
 
         /** @var Crawler $crawlerMetrics */

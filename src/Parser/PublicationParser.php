@@ -12,7 +12,7 @@ use Symfony\Component\DomCrawler\Crawler;
 /**
  * Parses a scholar's profile page from Google Scholar and returns its publications.
  */
-class PublicationParser extends BaseParser implements Parser
+class PublicationParser extends BaseParser implements ParserInterface
 {
 
     public const GSCHOLAR_XPATH = '//table[@id="gsc_a_t"]/tbody[@id="gsc_a_b"]/tr[@class="gsc_a_tr"]';
