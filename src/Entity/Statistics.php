@@ -10,28 +10,28 @@ class Statistics
 {
 
     /** @var int Number of citations */
-    private int $nbCitations;
+    private readonly int $nbCitations;
 
     /** @var int Number of citations, since $sinceYear */
-    private int $nbCitationsSince;
+    private readonly int $nbCitationsSince;
 
     /** @var int h-index */
-    private int $hIndex;
+    private readonly int $hIndex;
 
     /** @var int h-index, since $sinceYear */
-    private int $hIndexSince;
+    private readonly int $hIndexSince;
 
     /** @var int i10-index */
-    private int $i10Index;
+    private readonly int $i10Index;
 
     /** @var int i10-index, since $sinceYear */
-    private int $i10IndexSince;
+    private readonly int $i10IndexSince;
 
     /** @var int Year from which stats are computed */
-    private int $sinceYear;
+    private readonly int $sinceYear;
 
-    /** var array<string, string> List of number of citations, per year */
-    private array $nbCitationsPerYear;
+    /** @var array<string, string> List of number of citations, per year */
+    private readonly array $nbCitationsPerYear;
 
     public function __construct(array $properties)
     {

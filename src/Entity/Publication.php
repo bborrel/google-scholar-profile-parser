@@ -12,25 +12,25 @@ class Publication
 {
 
     /** @var string The publication title */
-    private string $title;
+    private readonly string $title;
 
     /** @var string Relative path on Google Scholar to publication's detail web page */
-    private string $publicationPath;
+    private readonly string $publicationPath;
 
     /** @var string List of authors, comma separated */
-    private string $authors;
+    private readonly string $authors;
 
     /** @var string Journal name, volume, issue, pages */
-    private string $publisherDetails;
+    private readonly string $publisherDetails;
 
     /** @var int|null Number of citations */
-    private ?int $nbCitations;
+    private readonly ?int $nbCitations;
 
     /** @var string|null URL on Google Scholar to publication's citations web page */
-    private ?string $citationsURL;
+    private readonly ?string $citationsURL;
 
     /** @var int Year of publication */
-    private int $year;
+    private readonly int $year;
 
     public function __construct(array $properties)
     {
@@ -40,7 +40,7 @@ class Publication
         $this->publisherDetails = $properties['publisherDetails'];
         $this->nbCitations = isset($properties['nbCitations']) ? (int) $properties['nbCitations'] : null;
         $this->citationsURL = $properties['citationsURL'] ?? null;
-        $this->year = (int)$properties['year'];
+        $this->year = (int) $properties['year'];
     }
 
     public function getTitle(): string
