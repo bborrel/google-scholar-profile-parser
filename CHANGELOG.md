@@ -3,11 +3,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [3.0.0] - 2025-02-11
+### Changed
+- Composer: bump PHP from >=7.4 to >=8.1
+- Dev dependencies: upgrade to latest versions compatible with PHP 8.1
+- Replace fabpot/goutte 4 with Symfony http-client + browser-kit
+### Added
+- Use Editor Config
+
 ## [2.2.0] - 2025-02-05
 ### Changed
 - fabpot/goutte: upgrade from 3.3.1 to 4.0.3
-- dev dependencies: upgrade to latest versions compatible with PHP 7.4
-- rename branch master into main
+- Dev dependencies: upgrade to latest versions compatible with PHP 7.4
+- Rename branch master into main
 
 ## [2.1.0] - 2021-08-04
 ### Changed
@@ -36,9 +44,9 @@ The format is based on [Keep a Changelog][1], and this project adheres to [Seman
 - Unit tests for entities Publication and Statistics.
 - Mutation tests with Infection.
 - Configuration of Continuous Integration with Travis-CI, running:
--- unit tests with code coverage published on Coveralls, 
--- check of code's compatibility with different PHP versions,
--- check of dependencies security flaws.
+  - Unit tests with code coverage published on Coveralls, 
+  - Check of code's compatibility with different PHP versions,
+  - Check of dependencies security flaws.
 - Badges in README.md.
 
 ## [1.1.2] - 2019-03-25
