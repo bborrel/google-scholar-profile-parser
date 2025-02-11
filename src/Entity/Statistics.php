@@ -10,29 +10,32 @@ class Statistics
 {
 
     /** @var int Number of citations */
-    private $nbCitations;
+    private readonly int $nbCitations;
 
     /** @var int Number of citations, since $sinceYear */
-    private $nbCitationsSince;
+    private readonly int $nbCitationsSince;
 
     /** @var int h-index */
-    private $hIndex;
+    private readonly int $hIndex;
 
     /** @var int h-index, since $sinceYear */
-    private $hIndexSince;
+    private readonly int $hIndexSince;
 
     /** @var int i10-index */
-    private $i10Index;
+    private readonly int $i10Index;
 
     /** @var int i10-index, since $sinceYear */
-    private $i10IndexSince;
+    private readonly int $i10IndexSince;
 
     /** @var int Year from which stats are computed */
-    private $sinceYear;
+    private readonly int $sinceYear;
 
-    /** var array<string, string> List of number of citations, per year */
-    private $nbCitationsPerYear;
+    /** @var array<string, string> List of number of citations, per year */
+    private readonly array $nbCitationsPerYear;
 
+    /**
+     * @param array<string, mixed> $properties
+     */
     public function __construct(array $properties)
     {
         $this->nbCitations = (int)$properties['nbCitations'];
@@ -43,7 +46,6 @@ class Statistics
         $this->i10IndexSince = (int)$properties['i10IndexSince'];
         $this->sinceYear = (int)$properties['sinceYear'];
 
-        /** @var string $nbCitationsPerYear */
         foreach ($properties['nbCitationsPerYear'] as &$nbCitationsPerYear) {
             $nbCitationsPerYear = (int)$nbCitationsPerYear;
         }
@@ -51,66 +53,46 @@ class Statistics
         $this->nbCitationsPerYear = $properties['nbCitationsPerYear'];
     }
 
-    /**
-     * @return int
-     */
-    public function getNbCitations() : int
+    public function getNbCitations(): int
     {
         return $this->nbCitations;
     }
 
-    /**
-     * @return int
-     */
-    public function getNbCitationsSince() : int
+    public function getNbCitationsSince(): int
     {
         return $this->nbCitationsSince;
     }
 
-    /**
-     * @return int
-     */
-    public function getHIndex() : int
+    public function getHIndex(): int
     {
         return $this->hIndex;
     }
 
-    /**
-     * @return int
-     */
-    public function getHIndexSince() : int
+    public function getHIndexSince(): int
     {
         return $this->hIndexSince;
     }
 
-    /**
-     * @return int
-     */
-    public function getI10Index() : int
+    public function getI10Index(): int
     {
         return $this->i10Index;
     }
 
-    /**
-     * @return int
-     */
-    public function getI10IndexSince() : int
+    public function getI10IndexSince(): int
     {
         return $this->i10IndexSince;
     }
 
-    /**
-     * @return int
-     */
-    public function getSinceYear() : int
+    public function getSinceYear(): int
     {
         return $this->sinceYear;
     }
 
+
     /**
-     * @return array<string, string>
+     * @return array<string, int>
      */
-    public function getNbCitationsPerYear() : array
+    public function getNbCitationsPerYear(): array
     {
         return $this->nbCitationsPerYear;
     }

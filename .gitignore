@@ -6,3 +6,6 @@ vendor
 
 # project
 build
+.deptrac.cache
+.php-cs-fixer.cache
+.phpunit.result.cache

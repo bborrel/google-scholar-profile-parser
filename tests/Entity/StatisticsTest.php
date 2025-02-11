@@ -10,7 +10,8 @@ use PHPUnit\Framework\TestCase;
 
 class StatisticsTest extends TestCase
 {
-    private $properties;
+    /** @var array<string, ?mixed> */
+    private array $properties;
 
     protected function setUp(): void
     {
@@ -26,6 +27,9 @@ class StatisticsTest extends TestCase
         ];
     }
 
+    /**
+     * @param array<string, ?mixed> $properties
+     */
     private function createUnitUnderTest(array $properties): Statistics
     {
         return new Statistics($properties);

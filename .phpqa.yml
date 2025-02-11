@@ -1,18 +1,41 @@
+phpqa:
+    # default CLI options - https://github.com/EdgedesignCZ/phpqa#analyze
+    # can be overriden by CLI: phpqa --tools phpcs:1
+    analyzedDirs: ./
+    buildDir: build/
+    ignoredDirs: build,tests,vendor
+    ignoredFiles: ""
+    report: true
+    execution: parallel
+    output: file
+    tools: phpmetrics,phploc,phpcs,php-cs-fixer,phpmd,pdepend,phpcpd,phpstan,phpunit,psalm,security-checker,parallel-lint,deptrac
+    # array definition and allowed errors count is supported too
+    # tools: [phploc, phpcs:0]
+    verbose: false
+
+    # Other config
+    # Php file extensions to parse.
+    extensions:
+        - php
+
 phpcs:
-  standard:
-    - PSR1
-    - PSR12
-    - ObjectCalisthenics
-    - PHPCompatibility
-    - Security
+    standard:
+        - PSR1
+        - PSR12
+        - ObjectCalisthenics
+        - PHPCompatibility
+        - Security
 
 phpmd:
-  standard:
-    - cleancode
-    - codesize
-    - design
-    - naming
-    - unusedcode
+    standard:
+        - cleancode
+        - codesize
+        - design
+        - naming
+        - unusedcode
 
 phpstan:
-  level: 7
+    level: 7
+
+security-checker:
+    composerLock: composer.lock # use it if composer.lock is not in current working directory or analyzed directory

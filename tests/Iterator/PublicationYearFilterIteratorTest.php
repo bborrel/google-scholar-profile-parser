@@ -12,10 +12,10 @@ use PHPUnit\Framework\TestCase;
 
 class PublicationYearFilterIteratorTest extends TestCase
 {
-    /** @var array[Publication] */
+    /** @var array<int, Publication> */
     private $allPublications;
 
-    /** @var array[Publication] */
+    /** @var array<int, Publication> */
     private $expectedPublications;
 
     protected function setUp(): void
@@ -41,7 +41,8 @@ class PublicationYearFilterIteratorTest extends TestCase
             'publicationPath' => '/path3',
             'authors' => 'Author 31, Author 32',
             'publisherDetails' => 'publisher 3',
-            'year' => '2017']);
+            'year' => '2017'
+        ]);
 
         $this->allPublications = [$publication1_2019, $publication2_2018, $publication3_2017];
         $this->expectedPublications = [$publication1_2019];

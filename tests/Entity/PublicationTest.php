@@ -11,7 +11,8 @@ use PHPUnit\Framework\TestCase;
 
 class PublicationTest extends TestCase
 {
-    private $properties;
+    /** @var array<string, ?string> */
+    private array $properties;
 
     protected function setUp(): void
     {
@@ -26,6 +27,9 @@ class PublicationTest extends TestCase
         ];
     }
 
+    /**
+     * @param array<string, ?string> $properties
+     */
     private function createUnitUnderTest(array $properties): Publication
     {
         return new Publication($properties);
