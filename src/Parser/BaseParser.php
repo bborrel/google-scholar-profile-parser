@@ -13,5 +13,7 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 abstract class BaseParser
 {
-    public function __construct(protected Crawler $crawler) {}
+    public function __construct(protected Crawler $crawler)
+    {
+    }
 }
