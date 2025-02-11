@@ -85,7 +85,7 @@ class StatisticsParser extends BaseParser implements ParserInterface
     }
 
     /**
-     * @return array<string, array<string, string>>
+     * @return array<string, string>
      */
     private function parseNbCitationsPerYear(): array
     {

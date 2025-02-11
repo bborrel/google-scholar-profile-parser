@@ -12,10 +12,10 @@ use PHPUnit\Framework\TestCase;
 
 class PublicationYearFilterIteratorTest extends TestCase
 {
-    /** @var array[Publication] */
+    /** @var array<int, Publication> */
     private $allPublications;
 
-    /** @var array[Publication] */
+    /** @var array<int, Publication> */
     private $expectedPublications;
 
     protected function setUp(): void

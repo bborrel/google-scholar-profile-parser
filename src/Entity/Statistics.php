@@ -33,6 +33,9 @@ class Statistics
     /** @var array<string, string> List of number of citations, per year */
     private readonly array $nbCitationsPerYear;
 
+    /**
+     * @param array<string, mixed> $properties
+     */
     public function __construct(array $properties)
     {
         $this->nbCitations = (int)$properties['nbCitations'];
@@ -43,7 +46,6 @@ class Statistics
         $this->i10IndexSince = (int)$properties['i10IndexSince'];
         $this->sinceYear = (int)$properties['sinceYear'];
 
-        /** @var string $nbCitationsPerYear */
         foreach ($properties['nbCitationsPerYear'] as &$nbCitationsPerYear) {
             $nbCitationsPerYear = (int)$nbCitationsPerYear;
         }
@@ -86,6 +88,10 @@ class Statistics
         return $this->sinceYear;
     }
 
+
+    /**
+     * @return array<string, int>
+     */
     public function getNbCitationsPerYear(): array
     {
         return $this->nbCitationsPerYear;

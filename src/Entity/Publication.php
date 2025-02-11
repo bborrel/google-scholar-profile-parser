@@ -32,6 +32,9 @@ class Publication
     /** @var int Year of publication */
     private readonly int $year;
 
+    /**
+     * @param array<string, string> $properties
+     */
     public function __construct(array $properties)
     {
         $this->title = $properties['title'];
