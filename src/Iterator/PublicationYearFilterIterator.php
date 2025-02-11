@@ -19,7 +19,7 @@ class PublicationYearFilterIterator extends FilterIterator
     /** @var int Year when publication was published */
     private int $year;
 
-    public function __construct(Iterator $iterator, $filter)
+    public function __construct(Iterator $iterator, int $filter)
     {
         parent::__construct($iterator);
 
