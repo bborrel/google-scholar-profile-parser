@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
+## [3.0.1] - 2025-02-12
+### Changed
+- Travis: switch to PHP 8.1
+- PHPUnit: refactor unit tests
+
 ## [3.0.0] - 2025-02-11
 ### Changed
 - Composer: bump PHP from >=7.4 to >=8.1
