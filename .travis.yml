@@ -25,7 +25,7 @@ script:
     - ./vendor/bin/phpunit
     - ./vendor/bin/infection --min-msi=65 --threads=4 --show-mutations
     - ./vendor/bin/phpcs -p --standard=PHPCompatibility --runtime-set testVersion 8.1- src
-    - composer audit
+    - composer audit --abandoned=ignore
 
 after_script:
     - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
