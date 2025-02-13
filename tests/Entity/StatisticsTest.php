@@ -16,14 +16,17 @@ class StatisticsTest extends TestCase
     protected function setUp(): void
     {
         $this->properties = [
-            'nbCitations' => null,
-            'nbCitationsSince' => null,
-            'hIndex' => null,
-            'hIndexSince' => null,
-            'i10Index' => null,
-            'i10IndexSince' => null,
-            'sinceYear' => null,
-            'nbCitationsPerYear' => [],
+            'nbCitations'        => '1',
+            'nbCitationsSince'   => '1',
+            'hIndex'             => '1',
+            'hIndexSince'        => '1',
+            'i10Index'           => '1',
+            'i10IndexSince'      => '1',
+            'sinceYear'          => '2010',
+            'nbCitationsPerYear' => [
+                '2018' => 10,
+                '2019' => 20,
+            ],
         ];
     }
 
@@ -35,75 +38,22 @@ class StatisticsTest extends TestCase
         return new Statistics($properties);
     }
 
-    public function testGetNbCitations(): void
+    public function testGettersAfterHappyPathHydration(): void
     {
-        $this->properties['nbCitations'] = '1';
-
         $uut = $this->createUnitUnderTest($this->properties);
 
-        $this->assertSame((int)$this->properties['nbCitations'], $uut->getNbCitations());
-    }
-
-    public function testGetNbCitationsSince(): void
-    {
-        $this->properties['nbCitationsSince'] = '1';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['nbCitationsSince'], $uut->getNbCitationsSince());
-    }
-
-    public function testGetHIndex(): void
-    {
-        $this->properties['hIndex'] = '1';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['hIndex'], $uut->getHIndex());
-    }
-
-    public function testGetHIndexSince(): void
-    {
-        $this->properties['hIndexSince'] = '1';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['hIndexSince'], $uut->getHIndexSince());
-    }
-
-    public function testGetI10Index(): void
-    {
-        $this->properties['i10Index'] = '1';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['i10Index'], $uut->getI10Index());
-    }
-
-    public function testGetI10IndexSince(): void
-    {
-        $this->properties['i10IndexSince'] = '1';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['i10IndexSince'], $uut->getI10IndexSince());
-    }
-
-    public function testGetSinceYear(): void
-    {
-        $this->properties['sinceYear'] = '2010';
-
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame((int)$this->properties['sinceYear'], $uut->getSinceYear());
+        $this->assertSame((int) $this->properties['nbCitations'],      $uut->getNbCitations());
+        $this->assertSame((int) $this->properties['nbCitationsSince'], $uut->getNbCitationsSince());
+        $this->assertSame((int) $this->properties['hIndex'],           $uut->getHIndex());
+        $this->assertSame((int) $this->properties['hIndexSince'],      $uut->getHIndexSince());
+        $this->assertSame((int) $this->properties['i10Index'],         $uut->getI10Index());
+        $this->assertSame((int) $this->properties['i10IndexSince'],    $uut->getI10IndexSince());
+        $this->assertSame((int) $this->properties['sinceYear'],        $uut->getSinceYear());
     }
 
     public function testGetNbCitationsPerYear(): void
     {
-        $this->properties['nbCitationsPerYear'] = [2018 => '10', 2019 => '20'];
-
         $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame([2018 => 10, 2019 => 20], $uut->getNbCitationsPerYear());
+        $this->assertSame(['2018' => 10, '2019' => 20], $uut->getNbCitationsPerYear());
     }
 }
