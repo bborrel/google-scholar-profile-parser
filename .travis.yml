@@ -8,9 +8,9 @@ php:
 os: linux
 dist: xenial
 addons:
-  apt:
-    packages:
-      - libonig5
+    apt:
+        packages:
+            - libonig2
 
 env:
     global:
