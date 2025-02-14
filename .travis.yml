@@ -6,11 +6,7 @@ php:
     - '8.4'
 
 os: linux
-dist: xenial
-addons:
-    apt:
-        packages:
-            - libonig2
+dist: jammy
 
 env:
     global:
