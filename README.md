@@ -5,7 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/bborrel/google-scholar-profile-parser/downloads)](https://packagist.org/packages/bborrel/google-scholar-profile-parser)
 [![License](https://poser.pugx.org/bborrel/google-scholar-profile-parser/license)](https://packagist.org/packages/bborrel/google-scholar-profile-parser)
 
-[![Tested on PHP 7.2 to 8.1](https://img.shields.io/badge/tested%20on-PHP%207.2%20|%207.3%20|%207.4%20|%208.0%20|%208.1%20-brightgreen.svg?maxAge=2419200)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
+[![Tested on PHP 7.2 to 8.3](https://img.shields.io/badge/tested%20on-PHP%207.2%20|%207.3%20|%207.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-brightgreen.svg?maxAge=2419200)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Build Status](https://app.travis-ci.com/bborrel/google-scholar-profile-parser.svg?token=GRFWf5QKer9Sw41QTo4e&branch=main)](https://app.travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Coverage Status](https://coveralls.io/repos/github/bborrel/google-scholar-profile-parser/badge.svg?branch=master)](https://coveralls.io/github/bborrel/google-scholar-profile-parser?branch=master)
 [![Mutation testing badge](https://badge.stryker-mutator.io/github.com/bborrel/google-scholar-profile-parser/master)](https://stryker-mutator.github.io)
@@ -82,8 +82,7 @@ and [Psalm][19]), and by Code Climate (which is setup with plugins [Phan][20], [
 - is unit tested with [PHPUnit][22] (code coverage on [Coveralls][23])
 - is mutation tested with [Infection][24]
 - is tested for compatibility with different versions of PHP (see [.travis.yml][25] for details)
-- has some of its dependencies (those listed by the [PHP Security Advisories Database][26]) checked for known security 
-issues
+- has its dependencies checked for known security issues by [Packagist API][26]
 - is continuously integrated on [TravisCI][27]
 
 These tools are installed with the library as long as you do not specify the option `--no-dev` when running the 
@@ -130,7 +129,7 @@ This library is licensed under the GPL-3.0-only License, see the [LICENSE.md][29
 [23]: https://coveralls.io/github/bborrel/google-scholar-profile-parser?branch=master
 [24]: https://github.com/infection/infection
 [25]: .travis.yml
-[26]: https://github.com/FriendsOfPHP/security-advisories
+[26]: https://packagist.org/apidoc#list-security-advisories
 [27]: https://travis-ci.com/bborrel/google-scholar-profile-parser
 [28]: https://github.com/bborrel
 [29]: LICENSE.md
