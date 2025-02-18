@@ -8,7 +8,7 @@
 [![Tested on PHP 7.2 to 8.3](https://img.shields.io/badge/tested%20on-PHP%207.2%20|%207.3%20|%207.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-brightgreen.svg?maxAge=2419200)](https://travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Build Status](https://app.travis-ci.com/bborrel/google-scholar-profile-parser.svg?token=GRFWf5QKer9Sw41QTo4e&branch=main)](https://app.travis-ci.com/bborrel/google-scholar-profile-parser)
 [![Coverage Status](https://coveralls.io/repos/github/bborrel/google-scholar-profile-parser/badge.svg?branch=master)](https://coveralls.io/github/bborrel/google-scholar-profile-parser?branch=master)
-[![Mutation testing badge](https://badge.stryker-mutator.io/github.com/bborrel/google-scholar-profile-parser/master)](https://stryker-mutator.github.io)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fbborrel%2Fgoogle-scholar-profile-parser%2Fmain)](https://dashboard.stryker-mutator.io/reports/github.com/bborrel/google-scholar-profile-parser/main)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
 Google Scholar Profile Parser is a PHP library which parses the HTML of a scholar's profile page from Google Scholar 
