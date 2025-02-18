@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog][1], and this project adheres to [Seman
 
 ## [3.0.1] - 2025-02-12
 ### Changed
-- Travis: switch to PHP 8.1
+- Travis: switch to PHP 8.1, PHP 8.2 and PHP 8.3
 - PHPUnit: refactor unit tests
 
 ## [3.0.0] - 2025-02-11
