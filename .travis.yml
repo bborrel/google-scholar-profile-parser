@@ -1,7 +1,14 @@
+os: linux
+
+dist: jammy
+
 language: php
 
-php:
-    - '8.1'
+jobs:
+    include:
+        - php: '8.1'
+        - php: '8.2'
+        - php: '8.3'
 
 env:
     global:
