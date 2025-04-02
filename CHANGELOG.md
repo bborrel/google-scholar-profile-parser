@@ -3,10 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
-## [3.0.1] - 2025-02-12
+## [TBD] - TBD
 ### Changed
+- Composer: relax version constraints on Symfony http-client + browser-kit
 - Travis: switch to PHP 8.1, PHP 8.2 and PHP 8.3
 - PHPUnit: refactor unit tests
+- README.md: update 'tested on' badge with PHP 8.2 and PHP 8.3, fix 'build status' badge
 
 ## [3.0.0] - 2025-02-11
 ### Changed
