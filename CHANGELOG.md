@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog][1], and this project adheres to [Semantic Versioning][2].
 
-## [TBD] - TBD
+## [3.0.1] - 2025-04-29
 ### Changed
 - Composer: relax version constraints on Symfony http-client + browser-kit
 - Travis: switch to PHP 8.1, PHP 8.2 and PHP 8.3
