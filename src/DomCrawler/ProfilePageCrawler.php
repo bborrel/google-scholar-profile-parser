@@ -14,7 +14,6 @@ use Symfony\Component\DomCrawler\Crawler;
  */
 class ProfilePageCrawler
 {
-
     public const GSCHOLAR_SCHEME = 'https';
     public const GSCHOLAR_HOSTNAME = 'scholar.google.com';
 

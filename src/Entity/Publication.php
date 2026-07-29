@@ -10,7 +10,6 @@ use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
 
 class Publication
 {
-
     /** @var string The publication title */
     private readonly string $title;
 

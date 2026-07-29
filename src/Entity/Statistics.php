@@ -8,7 +8,6 @@ namespace GScholarProfileParser\Entity;
 
 class Statistics
 {
-
     /** @var int Number of citations */
     private readonly int $nbCitations;
 
