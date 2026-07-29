@@ -8,6 +8,7 @@ namespace GScholarProfileParser\Parser;
 
 use DOMElement;
 use Symfony\Component\DomCrawler\Crawler;
+
 use function strlen;
 
 /**
@@ -15,7 +16,6 @@ use function strlen;
  */
 class StatisticsParser extends BaseParser implements ParserInterface
 {
-
     public const GSCHOLAR_XPATH_SINCE_YEAR = '//table[@id="gsc_rsb_st"]//th[3]';
     public const GSCHOLAR_XPATH_METRICS = '//table[@id="gsc_rsb_st"]//td[@class="gsc_rsb_std"]';
     public const GSCHOLAR_XPATH_YEARS = '//div[@class="gsc_md_hist_b"]/span[@class="gsc_g_t"]';

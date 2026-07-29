@@ -15,7 +15,6 @@ use Iterator;
  */
 class PublicationYearFilterIterator extends FilterIterator
 {
-
     /** @var int Year when publication was published */
     private int $year;
 
