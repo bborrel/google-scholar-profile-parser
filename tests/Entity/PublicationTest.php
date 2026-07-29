@@ -6,7 +6,6 @@
 
 namespace GScholarProfileParser\Entity;
 
-use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
 use PHPUnit\Framework\TestCase;
 
 class PublicationTest extends TestCase
@@ -46,13 +45,6 @@ class PublicationTest extends TestCase
         $this->assertSame($this->properties['citationsURL'],      $uut->getCitationsURL());
         $this->assertSame((int) $this->properties['nbCitations'], $uut->getNbCitations());
         $this->assertSame((int)$this->properties['year'],         $uut->getYear());
-    }
-
-    public function testGetPublicationURL(): void
-    {
-        $uut = $this->createUnitUnderTest($this->properties);
-
-        $this->assertSame(ProfilePageCrawler::getSchemeAndHostname() . $this->properties['publicationPath'], $uut->getPublicationURL());
     }
 
     public function testGetNbCitationsWhenNull(): void

@@ -6,8 +6,6 @@
 
 namespace GScholarProfileParser\Entity;
 
-use GScholarProfileParser\DomCrawler\ProfilePageCrawler;
-
 class Publication
 {
     /** @var string The publication title */
@@ -53,11 +51,6 @@ class Publication
     public function getPublicationPath(): string
     {
         return $this->publicationPath;
-    }
-
-    public function getPublicationURL(): string
-    {
-        return ProfilePageCrawler::getSchemeAndHostname() . $this->getPublicationPath();
     }
 
     public function getAuthors(): string

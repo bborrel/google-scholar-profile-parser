@@ -37,7 +37,7 @@ $latestPublication = $publications[0];
 
 // displays latest publication data
 echo $latestPublication->getTitle(), "\n";
-echo $latestPublication->getPublicationURL(), "\n";
+echo ProfilePageCrawler::getSchemeAndHostname() . $latestPublication->getPublicationPath(), "\n";
 echo $latestPublication->getAuthors(), "\n";
 echo $latestPublication->getPublisherDetails(), "\n";
 echo $latestPublication->getNbCitations(), "\n";
@@ -51,7 +51,7 @@ $publications2018 = new PublicationYearFilterIterator(new ArrayIterator($publica
 /** @var Publication $publication */
 foreach ($publications2018 as $publication) {
     echo $publication->getTitle(), "\n";
-    echo $publication->getPublicationURL(), "\n";
+    echo ProfilePageCrawler::getSchemeAndHostname() . $publication->getPublicationPath(), "\n";
     echo $publication->getAuthors(), "\n";
     echo $publication->getPublisherDetails(), "\n";
     echo $publication->getNbCitations(), "\n";
