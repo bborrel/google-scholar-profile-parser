@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b70d326d36ded8b7d689069c6783218e",
+    "content-hash": "33782bbae826771bbcd67f775010289d",
     "packages": [
         {
             "name": "masterminds/html5",
@@ -5508,54 +5508,6 @@
                 "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
             "time": "2023-04-04T09:54:51+00:00"
-        },
-        {
-            "name": "qossmic/deptrac",
-            "version": "2.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/qossmic/deptrac.git",
-                "reference": "a6dbfaf4f20f0ae98b766954f35b8c164c3063ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/qossmic/deptrac/zipball/a6dbfaf4f20f0ae98b766954f35b8c164c3063ed",
-                "reference": "a6dbfaf4f20f0ae98b766954f35b8c164c3063ed",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": "^8.1"
-            },
-            "suggest": {
-                "ext-dom": "For using the JUnit output formatter"
-            },
-            "bin": [
-                "bin/deptrac",
-                "deptrac.phar"
-            ],
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ],
-                "psr-4": {
-                    "Qossmic\\Deptrac\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Deptrac is a static code analysis tool that helps to enforce rules for dependencies between software layers.",
-            "keywords": [
-                "static analysis"
-            ],
-            "support": {
-                "source": "https://github.com/qossmic/deptrac/tree/2.0.4"
-            },
-            "abandoned": "deptrac/deptrac",
-            "time": "2024-11-21T22:38:34+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

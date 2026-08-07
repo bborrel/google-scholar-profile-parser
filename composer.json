@@ -29,7 +29,6 @@
         "phpcompatibility/php-compatibility": "^9.3",
         "phpstan/phpstan": "*",
         "phpunit/phpunit": "^9.6",
-        "qossmic/deptrac": "^2.0",
         "symplify/phpstan-rules": "^14.2",
         "vimeo/psalm": "*"
     },
