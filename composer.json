@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=8.1",
+        "php": ">=8.2",
         "ext-dom": "*",
         "symfony/browser-kit": ">=6.4",
         "symfony/http-client": ">=6.4"
