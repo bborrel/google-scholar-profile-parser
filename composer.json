@@ -46,5 +46,19 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "infection/extension-installer": true
         }
+    },
+    "scripts": {
+        "phpunit": "vendor/bin/phpunit",
+        "phpcs": "vendor/bin/phpcs --standard=PSR1,PSR12,Security -p src doc",
+        "phpcbf": "vendor/bin/phpcbf --standard=PSR1,PSR12,Security -p src doc",
+        "phpmd": "vendor/bin/phpmd src,doc text cleancode,codesize,controversial,design,naming,unusedcode",
+        "phpstan": "vendor/bin/phpstan analyze --level=2 -vvv src doc",
+        "ci": [
+            "@phpunit",
+            "@phpcs",
+            "@phpcbf",
+            "@phpmd",
+            "@phpstan"
+        ]
     }
 }
