@@ -18,7 +18,7 @@
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "edgedesign/phpqa": "^1.26",
-        "enlightn/security-checker": "*",
+        "enlightn/security-checker": "^2.0",
         "friendsofphp/php-cs-fixer": "*",
         "infection/infection": "^0.27.11",
         "nette/neon": "*",
