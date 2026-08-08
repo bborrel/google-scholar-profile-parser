@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "99325f778d11e002cf8215b843d5cb6c",
+    "content-hash": "1eb1e99a9f23a9c0033c7a5911664066",
     "packages": [
         {
             "name": "masterminds/html5",
