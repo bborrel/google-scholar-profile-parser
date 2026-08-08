@@ -6,9 +6,11 @@
 
 namespace GScholarProfileParser\Parser;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DomCrawler\Crawler;
 
+#[CoversClass(StatisticsParser::class)]
 class StatisticsParserTest extends TestCase
 {
 
@@ -69,9 +71,6 @@ class StatisticsParserTest extends TestCase
         }
     }
 
-    /**
-     * @covers \GScholarProfileParser\Parser\StatisticsParser
-     */
     public function testParse(): void
     {
         $statisticsParser = $this->createUnitUnderTest();

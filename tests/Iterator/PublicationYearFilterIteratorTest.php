@@ -8,8 +8,12 @@ namespace GScholarProfileParser\Iterator;
 
 use ArrayIterator;
 use GScholarProfileParser\Entity\Publication;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(PublicationYearFilterIterator::class)]
+#[UsesClass(Publication::class)]
 class PublicationYearFilterIteratorTest extends TestCase
 {
     /** @var array<int, Publication> */
@@ -48,9 +52,6 @@ class PublicationYearFilterIteratorTest extends TestCase
         $this->expectedPublications = [$publication1_2019];
     }
 
-    /**
-     * @covers \GScholarProfileParser\Iterator\PublicationYearFilterIterator::<public>
-     */
     public function testPublicationYearFilterFiltersIn(): void
     {
         $actualPublications = [];
