@@ -6,8 +6,10 @@
 
 namespace GScholarProfileParser\Entity;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
+#[CoversClass(Statistics::class)]
 class StatisticsTest extends TestCase
 {
     /** @var array<string, ?mixed> */
